@@ -13,3 +13,18 @@ jobs:
         run: | # | => Used in order to run multiple commands in one step
           node -v
           npm -v
+
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps: 
+      - name: View SW Version
+        run: sw_vers
+
+  dependant-job:
+    runs-on: windows-latest
+    needs: run-shell-commands #this indicates that this Job will only run after the run-shell-commands have finished.
+    steps: 
+      - name: echo a string
+        run: Write-Output "Windows String" # Because we are talking about windows, the expected command is in PowerShell syntax
+      - name: Error step
+        run: doesnotexists # In order to trigger an Error

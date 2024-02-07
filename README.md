@@ -20,3 +20,6 @@ npm run start
 
 ## .github/Workflows
 All the Workflows created with their respective comments for later reference.
+
+## Important
+Take in mind, that all the workflows have been configured to run on Push, so, every single time you commit a change, to any file, and then push these changes into your remote repository, all the workflows will be triggered. 
