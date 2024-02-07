@@ -38,3 +38,13 @@ One can add Secrets and Variables in GitHub
 Settings => Secrets and Variables => Actions
 A SECRET has priority over a VARIABLE
 
+For DEBUGGING add the following variables
+    ACTIONS_RUNNER_DEBUG = true
+    ACTIONS_STEP = true
+
+
+++++ COMMANDS ++++
+In order to SKIP a Workflow 
+In the commit Message include [no ci] / [skip ci] / [ci skip] / [skip actions] / [actions skip]
+git commit -am "Don't Run [skip ci]"
+
