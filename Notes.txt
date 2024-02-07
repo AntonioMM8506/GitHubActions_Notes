@@ -25,3 +25,16 @@ A workflow can have multiple steps.
                 - Larger Runners (Hosted by GitHub with more RAM & CPU)
             - Steps
                 - Action
+
++++++ COMMANDS +++++
+In the GitHub CLI one can run the following commands in order to enable or disable a Workflow
+gh workflow w enale "First Workflow"
+gh workflow w disable "Firt Workflow"
+
+A Workflow running cannot be canceled
+
+
+One can add Secrets and Variables in GitHub
+Settings => Secrets and Variables => Actions
+A SECRET has priority over a VARIABLE
+

@@ -27,4 +27,4 @@ jobs:
       - name: echo a string
         run: Write-Output "Windows String" # Because we are talking about windows, the expected command is in PowerShell syntax
       - name: Error step
-        run: doesnotexists # In order to trigger an Error
+        run: doesnotexists # In order to trigger an Error => The term 'doesnotexists' is not recognized as a name of a cmdlet, function, script file, or executable program.
