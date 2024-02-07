@@ -8,3 +8,13 @@ jobs:
     steps:
       - name: Setting an Error Message
         run: echo "::error::Missing semicolon" #::error:: indicates the type of messsage
+        # This will indicate an Error in the Workflow, but it will not make it fail. It's just like a warning.
+      
+      - name: Setting an ERROR message with params
+        run: echo "::error title=Error title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon"
+      - name: Setting a WARNING message with params
+        run: echo "::warning title=Warning title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon"
+      - name: Setting a NOTICE message with params
+        run: echo "::notice title=Notice title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon"
+      - name: Setting a DEBUG message with params
+        run: echo "::debug title=Debug title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon"
