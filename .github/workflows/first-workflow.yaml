@@ -1,0 +1,15 @@
+name: First Workflow
+
+# On: => what triggers the Workflow
+on: [push]
+
+jobs:
+  run-shell-commands: 
+    runs-on: ubuntu-latest #indicates the OS for the Runner Machine
+    steps: 
+      - name: echo a string
+        run: echo "Hello World"
+      - name: Multiline command
+        run: | # | => Used in order to run multiple commands in one step
+          node -v
+          npm -v

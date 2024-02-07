@@ -1,0 +1,27 @@
+GitHub Actions
+
+A tool that lets you automate your software development workflows.
+
+It allows you to react to some events that can happen in your repository or outside of your repository. And run a workflow in response to that event.
+
+Workflows => They are configurable automate processed that you can set up in your repository in order to perform a certain task.
+    - Tetsing your code.
+    - Pybishing a package
+    - Deploying an application
+    - Sending a message to another platform such as Slack
+    - Opening an Issue in GitHub
+
+A workflow can have multiple steps. 
+    - Events 
+        - Repository Events: Push, Pull Request, Issue.
+        - External Events: Sending a POST request to a REST API.
+        - Scheduled Times
+        - Manually
+    - Worflow 
+        - Job: Each Job run independent from each other, they usually run in their individual runner machine in parallel. 
+            - Runner Machine
+                - GitHub Hosted Runners (Windows/Linux/MacOS tools installed)
+                - Self Hosted Runners (More responsibility/More customization)
+                - Larger Runners (Hosted by GitHub with more RAM & CPU)
+            - Steps
+                - Action
