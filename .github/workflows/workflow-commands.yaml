@@ -10,6 +10,7 @@ jobs:
         run: echo "::error::Missing semicolon" #::error:: indicates the type of messsage
         # This will indicate an Error in the Workflow, but it will not make it fail. It's just like a warning.
       
+      # Example of all the kind of different messages one can display in a Workflow
       - name: Setting an ERROR message with params
         run: echo "::error title=Error title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon"
       - name: Setting a WARNING message with params
@@ -18,11 +19,15 @@ jobs:
         run: echo "::notice title=Notice title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon"
       - name: Setting a DEBUG message with params
         run: echo "::debug title=Debug title, file=app.js,line=2, endLine=3, col=5, endColumn=7::Missing Semicolon"
+      
+      # Group Messages under one name
       - name: Group of logs
         run: |
           echo "::group::My group title"
           echo "Inside group"
           echo "::endgroup::"
+      
+      # Masks a value so it can not be reflected in the Workflow messages. 
       - name: Masking a value
         run: echo "::add-mask::Secret String"
       - name: Echo a secret
