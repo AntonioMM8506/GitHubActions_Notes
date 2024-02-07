@@ -1,26 +1,49 @@
 name: Working Dirs & Shells
 
 on: [push]
+
+# This guarantees that we can set certain properties at workflow level, in this case we are indicaing that the default shell
+# is gonna be BASH, and we can also change the default directory.
+defaults: 
+  run:
+    shell: bash
+    # working-directory: /de/ed
+
 jobs:
+
   display-wd-info:
     runs-on: ubuntu-latest
     steps:
       - name: Display Working Directory & List of files
+        #Hidden Secrets that are setted by default for every repository
         run: |
           pwd
           ls -a
-          echo $GITHUB_SHA
+          echo $GITHUB_SHA 
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-          echo $ACTIONS_RUNNER_DEBUG
+      - name: Change Working Directory
+        working-directory: /home/runner
+        run: pwd
+
   display-wd-info-windows:
     runs-on: windows-latest
+    # In order to overwrite the global default, one can edit it right after the runs-on.
+    defaults:
+      run:
+        shell: pwsh
     steps:
       - name: Display Working Directory & List of files
+        # Different syntax due to the use of Windows as the runner machine
         run: |
-          pwd
-          ls -a
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-        
+          Get-Location
+          dir
+          echo $env:GITHUB_SHA
+          echo $env:GITHUB_REPOSITORY
+          echo $env:GITHUB_WORKSPACE
+      # This indicates that we can override the default shell at workflow level, job level and even at step level
+      - name: Pyhton Shells
+        shell: python
+        run: |
+          import platform
+          print(platform.processor())
