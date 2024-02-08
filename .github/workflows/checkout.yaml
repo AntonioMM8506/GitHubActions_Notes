@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: List Files before
-        run: la -a
+        run: ls -a
         # GITHUB_ACTOR => current username, settled default by GitHub
         # ${{ secrets.MYSECRET }} => way to access to the SECRETS created in the repository. 
       - name: Chekcout
@@ -17,5 +17,5 @@ jobs:
           git fetch origin
           git checkout main
       - name: List Files after
-        run: la -a
+        run: ls -a
     
