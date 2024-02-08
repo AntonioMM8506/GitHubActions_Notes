@@ -1,5 +1,7 @@
 GitHub Actions
 
+Introduction & Basic Concepts +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 A tool that lets you automate your software development workflows.
 
 It allows you to react to some events that can happen in your repository or outside of your repository. And run a workflow in response to that event.
@@ -25,6 +27,11 @@ A workflow can have multiple steps.
                 - Larger Runners (Hosted by GitHub with more RAM & CPU)
             - Steps
                 - Action
+
+In the root path, create a folder .github
+Inside this one create another folder and name it workflows
+there you can store all the yaml files
+
 
 +++++ COMMANDS +++++
 In the GitHub CLI one can run the following commands in order to enable or disable a Workflow
@@ -52,3 +59,7 @@ By default, the repository is not cloned into the Workflow Runner Machine.
 For this you need to checkout the files to the runner machine. See checkout.yaml.
 
 ${{ secret.MYSECRET }} => way to call a secret into a command inside a yaml file
+
+
+
+Events that trigger workflows ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
