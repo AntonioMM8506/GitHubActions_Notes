@@ -49,3 +49,6 @@ In the commit Message include [no ci] / [skip ci] / [ci skip] / [skip actions] /
 git commit -am "Don't Run [skip ci]"
 
 By default, the repository is not cloned into the Workflow Runner Machine.
+For this you need to checkout the files to the runner machine. See checkout.yaml.
+
+${{ secret.MYSECRET }} => way to call a secret into a command inside a yaml file
