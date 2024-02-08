@@ -48,3 +48,4 @@ In order to SKIP a Workflow
 In the commit Message include [no ci] / [skip ci] / [ci skip] / [skip actions] / [actions skip]
 git commit -am "Don't Run [skip ci]"
 
+By default, the repository is not cloned into the Workflow Runner Machine.

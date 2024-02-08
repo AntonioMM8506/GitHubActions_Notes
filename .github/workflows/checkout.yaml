@@ -1,0 +1,21 @@
+name: Checkout 
+
+on: [push]
+
+jobs: 
+  checkout-and-display-files:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: List Files before
+        run: la -a
+        # GITHUB_ACTOR => current username, settled default by GitHub
+        # ${{ secrets.MYSECRET }} => way to access to the SECRETS created in the repository. 
+      - name: Chekcout
+        run: |
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY" 
+          git fetch origin
+          git checkout main
+      - name: List Files after
+        run: la -a
+    
