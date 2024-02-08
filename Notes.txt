@@ -63,3 +63,5 @@ ${{ secret.MYSECRET }} => way to call a secret into a command inside a yaml file
 
 
 Events that trigger workflows ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+In order to trigger a Workflow when having a pull-request. An approval will be required before launching the Workflow.
