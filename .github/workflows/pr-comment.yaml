@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Comment on New PRs
         uses: actions/github-script@v6
-        # In order to run basic JS commands
+        # In order to run basic JS commands 
         with:
           script: |
             github.rest.issues.createComment({
