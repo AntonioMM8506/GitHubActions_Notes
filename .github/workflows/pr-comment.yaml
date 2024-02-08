@@ -2,7 +2,7 @@ name: Pull Request Comment
 
 on:
   pull_request_target:
-    types: [ opened ] 
+    types: [ opened ]
 
 jobs: 
   pr-comment:
@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Comment on New PRs
         uses: actions/github-script@v6
+        # In order to run basic JS commands
         with:
           script: |
             github.rest.issues.createComment({
