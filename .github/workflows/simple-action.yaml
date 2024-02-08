@@ -11,7 +11,7 @@ jobs:
         id: greet
         # @ => references the target branch from the repository
         # one can use a public repository or an specific repsoitory action by calling the user_id/repository
-        uses: actions/hello-world-javascripr-action@main
+        uses: actions/hello-world-javascript-action@main
         with: 
           who-to-greet: Antonio
       - name: Log greeting time
