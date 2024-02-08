@@ -3,9 +3,31 @@ name: Repository Events
 # on: [push, pull_request, issues]
 
 on:
+  # if no branch is indicated, the workflow will be triggered when pushing to any branch
   push: 
+    branches:
+      - main
+      - "features/*" # matches features/ an any other branch nameed after the /. It DOES NOT match features/path/whatever
+      - "features/**" # matches features/ an any other branch nameed after the /. It DOES match features/path/whatever
+    # One cannot use branches and branches-ignore at the same time
+    #branches-ignore:
+      #- develop
+    tags: 
+      - v1.* 
+    # One canno use tags and tags-ignore at the same time.
+    # tags-ignore: 
+      # - v2
+    paths:
+      - "**.js"
+      - "!app.js" # ! => excludes the mentioned elements from the Workflow
   pull_request:
     types: [ opened, assigned, reopened, synchronize ]
+    # This indicates that the workflow, when having a pull request, will only be trigerred when using the main branch
+    # and affecting a JS file.
+    branches: 
+      - main
+    paths: 
+      - "**.js"
   issues:
     types: [ opened ]
 
