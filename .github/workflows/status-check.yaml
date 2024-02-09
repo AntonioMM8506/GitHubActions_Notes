@@ -16,7 +16,7 @@ jobs:
         # Whennever the workflow fails, this step will run
         # if: failure()
         # Only when step, with id=step-2 fails, then this step will run
-        if: steps.step-2.conclusion == 'failure'
+        if: failure() && steps.step-2.conclusion == 'failure'
         run: echo 'Runs only on failure'
       - name: Runs on Success
         # default, not necessary to include in a normal workflow.
