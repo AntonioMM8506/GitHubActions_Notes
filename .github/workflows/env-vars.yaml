@@ -23,6 +23,15 @@ jobs:
         run: echo $GITHUB_REF
       - name: Log Context
         run: echo '${{ github.ref }}'
+      
+      # Example of a dynamic Env Var
+      # Using the >> guarantees that the value is stored into another env_variable that is gonna be accessible for any 
+      # further step in the workflow
+      - name: Set Env Var
+        run: |
+          echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"
+          echo "JOB_LEVEL_ENV=$RANDOM" >> "$GITHUB_ENV"
+
       - name: Log Custom ENV VARS
         # STEP Level
         env: 
@@ -34,4 +43,5 @@ jobs:
           echo $STEP_LEVEL_ENV
           echo $WF_LEVEL_ENV
           echo $JOB_LEVEL_ENV
+          echo $NEW_ENV_VAR
       
