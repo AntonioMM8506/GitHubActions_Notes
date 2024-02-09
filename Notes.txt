@@ -72,3 +72,26 @@ Lecture 21 & 22 => How to use Postman to send external events
 
 We can also schedule Workflows to be triggered at a certain time. Look for stale.yaml
 Look for contab guru at google in order to use the cron parameter in the yaml file.
+    5 fields => minute, hour, day (month), month, day(week)
+    * any value
+    , value list separator
+    - range of values
+    / step values
+    0-6 allowed values
+    SUN-SAT alternative single values
+    ? sunday
+    for example:
+      1,2 * * * * => it means that it will be triggered at every 1 and 2 minutes of every hour, every day, every month. 
+      1-3 * * * * => every 1, 2 and 3 minutes of every hour, every day, every month
+      0/15 * * * * => from minute 0 and every 15 minutes of every hour, every day, every month
+      0 12 1 1 * => at 12:00 every 1st of January
+      0 13 * FEB 3 => at 13:00 every Wednesday of February 
+    months and days of the week start at 0 being January and Sunday their respective 0
+
+
+
+Expressions, contexts and functions ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+GitHub objects are also called context
+
+YAML is NOT case sensitive.

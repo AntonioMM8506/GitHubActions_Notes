@@ -1,0 +1,28 @@
+name: Expressions & Contexts
+
+on: [push, pull_request, issues, workflow_dispatch]
+
+jobs: 
+  using-expressions-and-contexts:
+    runs-on: ubuntu-latest
+    steps:
+    # yaml is not case sensitive
+      - name: Expressions
+        id: expressions
+        run: |
+          echo ${{ 1 }}
+          echo ${{ 'I am a String' }}
+          echo ${{ null }}
+          echo ${{ true }}
+          echo ${{ 1 > 2 }}
+          echo ${{ 'string' == 'String' }} 
+          echo ${{ true && false }}
+          echo ${{ true || (false && true) }}
+      # Basic contexts
+      - name: Dump Contexts
+        run: |
+          echo '${{ toJson(github) }}'
+          echo '${{ toJson(job) }}'
+          echo '${{ toJson(secrets) }}'
+          echo '${{ toJson(steps) }}'
+          echo '${{ toJson(runner) }}'
