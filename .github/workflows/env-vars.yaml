@@ -6,7 +6,6 @@ on: [push]
 env: 
   WF_LEVEL_ENV: Available to all jobs and steps. 
 
-
 # The context variables are always searched into the Runner Machine
 jobs: 
   env-vars-and-context: 
