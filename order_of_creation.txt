@@ -6,3 +6,5 @@
 06 - events.yaml
 07 - pr-comment.yaml
 08 - workflow-run.yaml
+09 - manually-triggered.yaml
+10 - external-event.yaml
