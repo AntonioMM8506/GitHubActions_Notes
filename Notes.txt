@@ -102,3 +102,11 @@ If the condition is given as FALSE, then the rest of the steps will not be execu
 
 Default Environment Variables
 https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
+
+Even when we think that the context and the environment variables are the same, the way we talk about then is different.
+Both are stored at the runner machina, however the way to access to both of them is different.
+If we want to exponse it, the env var is the better approach. However, if we require it to make internal comparissons
+or internal tasks at all, then the Context is a better approach. 
+In other words:
+When we are talking about ENV Variables => $GITHUB_REF
+When we are talking about the Context => github_ref
