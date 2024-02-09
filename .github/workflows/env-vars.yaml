@@ -13,7 +13,7 @@ jobs:
     # env var, NOT recommended here
     # $GITHUB_REF == 'refs/head/main'
     # context
-    if: github.ref == 'refs/head/main'
+    if: github.ref == 'refs/heads/main'
 
     # JOB level
     env:
