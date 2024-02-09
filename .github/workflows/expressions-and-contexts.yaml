@@ -2,6 +2,9 @@ name: Expressions & Contexts
 
 on: [push, pull_request, issues, workflow_dispatch]
 
+# Way to indicate the name of the contributor and the actior they performed.
+run-name: "Expressions & Contexts BY @${{ github.actor }}, event: ${{ github.event_name }}"
+
 jobs: 
   using-expressions-and-contexts:
     runs-on: ubuntu-latest
