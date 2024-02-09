@@ -35,6 +35,7 @@ jobs:
           echo "JOB_LEVEL_ENV=$RANDOM" >> "$GITHUB_ENV"
       
       - name: Multiline Env Var
+        # The DELIMITER, for security, has to be random always
         run: |
           DELIMITER=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
           echo "RANDOM_JOKE<<$DELIMITER" >> "$GITHUB_ENV" 
