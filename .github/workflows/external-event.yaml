@@ -1,10 +1,13 @@
 name: External Event
 
+#This configuration in intended to work when a POST request is sent through postman
+#giving all the required body parameters in order to trigger the workflow.
 on: 
   repository_dispatch:
+    types: [build]
 
 jobs:
   echo-a-string:
     runs-on: ubuntu-latest
     steps: 
-      - run: echo "Repository Dispatch"
+      - run: echo ${{ github.event.client_payload.env }}

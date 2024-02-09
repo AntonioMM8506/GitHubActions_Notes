@@ -68,3 +68,7 @@ In order to trigger a Workflow when having a pull-request. An approval will be r
 
 One can also use the repository in order to dispatch events for External events. 
 
+Lecture 21 & 22 => How to use Postman to send external events
+
+We can also schedule Workflows to be triggered at a certain time. Look for stale.yaml
+Look for contab guru at google in order to use the cron parameter in the yaml file.

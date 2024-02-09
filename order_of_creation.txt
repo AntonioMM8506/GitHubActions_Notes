@@ -8,3 +8,4 @@
 08 - workflow-run.yaml
 09 - manually-triggered.yaml
 10 - external-event.yaml
+11 - stale.yaml
