@@ -99,3 +99,6 @@ YAML is NOT case sensitive.
 The IF statement is gonna validate that the condition is true or false before continuing with the steps, that's the reason of declaring after the runs-on instruction.
 If the condition is given as FALSE, then the rest of the steps will not be executed. 
 
+
+Default Environment Variables
+https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
