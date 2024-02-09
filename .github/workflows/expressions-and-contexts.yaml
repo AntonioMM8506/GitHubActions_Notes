@@ -8,8 +8,11 @@ run-name: "Expressions & Contexts BY @${{ github.actor }}, event: ${{ github.eve
 jobs: 
   using-expressions-and-contexts:
     runs-on: ubuntu-latest
+    # IF is placed at runs-on level
+    # the ${{}} is not necessary. Everything inside the IF is treated as an expression.
+    if: github.event_name == 'push'
     steps:
-    # yaml is not case sensitive
+      # yaml is not case sensitive
       - name: Expressions
         id: expressions
         run: |
