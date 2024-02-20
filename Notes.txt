@@ -114,3 +114,10 @@ When we are talking about the Context => github_ref
 
 When talking about SECRETS, the ones defined at repository level override the ones defined at organization level, 
 this when the secrets have all the same name at both level.
+
+After downloading and installing GnuPG
+locate in the path of the secret.json file and run
+gpg --symmetric --cipher-algo AES256 secret.json
+
+for decrypting
+gpg --decrypt --passphrase="Yourpassphrase" --output ~/Desktop/decrypted.json secret.json.gpg
