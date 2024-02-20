@@ -3,6 +3,8 @@ on: [push]
 
 jobs: 
   node-matrix:
+    # at job level, if any step fails, the whole job is not interrupted.
+    continue-on-error: true
     # The strategy defines the matrix, so as many arguments are received, is the number of times the job will run
     # each time with one of the given values.
     # In the case of having more than 1 defined matrix, then the job will run with all the possible combinations.
@@ -10,6 +12,10 @@ jobs:
       matrix: 
         os: [ubuntu-latest, windows-latest]
         node-version: [14, 15, 16]
+      # if not included, or if setted to true, if one job fails, the others that are pending to finish will fail as well.
+      fail-fast: false
+      # if not specifed, all combinations run at the same time in parallel
+      max-parallel: 2
     runs-on: ${{ matrix.os }}
     steps:
       - run: node -v
