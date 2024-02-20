@@ -126,3 +126,5 @@ gpg --decrypt --passphrase="Yourpassphrase" --output ~/Desktop/decrypted.json se
 
 
 More advanced features ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+When defining a matrix. The job will run several times, each time with different values according to the values of the matrix
