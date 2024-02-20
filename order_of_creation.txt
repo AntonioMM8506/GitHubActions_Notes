@@ -12,3 +12,4 @@
 12 - expressions-and-contexts.yaml
 13 - status-check.yaml
 14 - env-vars.yaml
+15 - vars-and-secrets.yaml

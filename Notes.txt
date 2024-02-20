@@ -110,3 +110,7 @@ or internal tasks at all, then the Context is a better approach.
 In other words:
 When we are talking about ENV Variables => $GITHUB_REF
 When we are talking about the Context => github_ref
+
+
+When talking about SECRETS, the ones defined at repository level override the ones defined at organization level, 
+this when the secrets have all the same name at both level.
