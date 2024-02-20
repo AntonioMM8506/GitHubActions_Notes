@@ -4,7 +4,9 @@ on: [push]
 jobs: 
   node-matrix:
     # at job level, if any step fails, the whole job is not interrupted.
-    continue-on-error: true
+    # continue-on-error: true
+    continue-on-error: ${{ matrix.experimental == true }}
+    
     # The strategy defines the matrix, so as many arguments are received, is the number of times the job will run
     # each time with one of the given values.
     # In the case of having more than 1 defined matrix, then the job will run with all the possible combinations.
