@@ -5,6 +5,8 @@ on: [push]
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    # It passes more minutes than the specified, then the entire job will get cancelled.
+    timeout-minutes: 1
     steps:
       - name: Step 1
         run: sleep 90
