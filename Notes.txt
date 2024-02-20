@@ -121,3 +121,8 @@ gpg --symmetric --cipher-algo AES256 secret.json
 
 for decrypting
 gpg --decrypt --passphrase="Yourpassphrase" --output ~/Desktop/decrypted.json secret.json.gpg
+
+
+
+
+More advanced features ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
