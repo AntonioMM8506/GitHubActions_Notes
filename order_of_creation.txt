@@ -15,3 +15,4 @@
 15 - vars-and-secrets.yaml
 16 - matrix.yaml
 17 - dynamic-matrix.yaml
+18, 19 - concurrency-1.yaml, concurrency-2.yaml
