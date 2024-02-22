@@ -9,11 +9,11 @@ on:
         type: environment
         required: true
 
-# concurrency can work wither at workflow or job level
+# If two different workflows have the same concurrency group, they can interfere with each other.
 concurrency: 
-  # group: concurrency-1 # static group, only lets onw workflow working at the time
-  group: ${{ github.event.inputs.environment }} 
-  cancel-in-progress: true # this will cancel any workflow that it's in progress, only leaving the last one running
+  # add the workflow name, so we can have 2 different concurrency groups.
+  group: ${{ github.workflow }} - ${{ github.event.inputs.environment }} 
+  cancel-in-progress: true
 
 jobs:
   sleep:

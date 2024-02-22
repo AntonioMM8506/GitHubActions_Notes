@@ -12,7 +12,7 @@ on:
 # concurrency can work wither at workflow or job level
 concurrency: 
   # group: concurrency-1 # static group, only lets onw workflow working at the time
-  group: ${{ github.event.inputs.environment }} 
+  group: ${{ github.workflow }} - ${{ github.event.inputs.environment }} 
   cancel-in-progress: true # this will cancel any workflow that it's in progress, only leaving the last one running
 
 jobs:
