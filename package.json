@@ -1,0 +1,25 @@
+{
+  "name": "githubactions_notes",
+  "version": "1.0.0",
+  "description": "## Notes.txt General notes about GitHub Actions and Workflows. Basic theory for a better understanding.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonioMM8506/GitHubActions_Notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonioMM8506/GitHubActions_Notes/issues"
+  },
+  "homepage": "https://github.com/AntonioMM8506/GitHubActions_Notes#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1"
+  }
+}
