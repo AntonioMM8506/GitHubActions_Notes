@@ -8,6 +8,9 @@ on:
         type: environment
         required: true
 
+# concurrency can work wither at workflow or job level
+concurrency: concurrency-1
+
 jobs:
   sleep:
     runs-on: ubuntu-latest
