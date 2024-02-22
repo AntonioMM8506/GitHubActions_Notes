@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: npm Install
+        run: npm install
       - name: Use Axios
         uses: actions/github-script@v6
         with: 
