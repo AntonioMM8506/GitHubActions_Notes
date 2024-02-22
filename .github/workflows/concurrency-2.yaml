@@ -1,4 +1,5 @@
 name: Concurrency 2
+run-name: Concurrency 1 (${{ inputs.environment }})
 
 on: 
   workflow_dispatch:
@@ -7,6 +8,12 @@ on:
         description: "Environment"
         type: environment
         required: true
+
+# concurrency can work wither at workflow or job level
+concurrency: 
+  # group: concurrency-1 # static group, only lets onw workflow working at the time
+  group: ${{ github.event.inputs.environment }} 
+  cancel-in-progress: true # this will cancel any workflow that it's in progress, only leaving the last one running
 
 jobs:
   sleep:
