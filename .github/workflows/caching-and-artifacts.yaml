@@ -6,15 +6,29 @@ jobs:
   use-axios:
     runs-on: ubuntu-latest
     steps:
+      # In order to create a Cache these are the basic steps.
+      # When caching, this allows to make the workflows to run faster, because it does not need to
+      # reinstall all the dependencies every single time the workflow runs.
       - uses: actions/checkout@v3
       - name: Cache Node modules
         id: cache-dependencies
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: "npm-cache"
+          # the problem when using static keys, is that when adding a new package, this packafge will not 
+          # be considered in the existing cache.
+          # key: "npm-cache"
+          # So, in order to make the cache dynamic, we need to include the package.json as an expression into the key
+          # We can also have a different cache for every single OS
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/packagel-lock.json') }}
+          # In the case we do not find a key, then we can rely on restore-keys. It does not have to be an exact string.
+          # we can provide only certain part of the string to look after.
+          restore-keys: |
+            ${{ runner.os }}-npm-cache-$
+            ${{ runner.os }}-
       - name: Display Cache output
         run: echo '${{ toJSON(steps.cache-dependencies.outputs) }}'
+
       - name: Install Dependencies
         run: npm install
       - name: Use Axios
