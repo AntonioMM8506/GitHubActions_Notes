@@ -20,7 +20,7 @@ jobs:
           # key: "npm-cache"
           # So, in order to make the cache dynamic, we need to include the package.json as an expression into the key
           # We can also have a different cache for every single OS
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/packagel-lock.json') }}
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           # In the case we do not find a key, then we can rely on restore-keys. It does not have to be an exact string.
           # we can provide only certain part of the string to look after.
           restore-keys: |
