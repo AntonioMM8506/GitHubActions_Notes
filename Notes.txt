@@ -143,3 +143,20 @@ Artifacts are files that are produced by a job. For example logs, test coverage 
 
 In order to produce a jest report
 npx jest --coverage
+
+
+
+
+Using Docker ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+For using Docker Container, you have to consult at Docker Hub which containers are available.
+
+After defining a container, all the following steps are gonna run inside the container.
+
+
+
+
+
+
+
+

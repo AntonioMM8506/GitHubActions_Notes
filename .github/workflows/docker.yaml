@@ -1,0 +1,38 @@
+name: Docker
+
+on: [workflow_dispatch]
+
+jobs: 
+  docker-job: 
+    runs-on: ubuntu-latest
+    # For using Docker Container, you have to consult at Docker Hub which containers are available.
+    container: 
+      image: node:20.3-alpine3.17
+      # In case you are using a Private Image
+      # credentials:
+        # username: 
+        # password: 
+      env: 
+        API_URL: some-url.com
+      # Ports to be exposed in the container
+      ports: 
+        - 80
+      # volumes:
+        # named volumes
+        # - vol_name:/path/in/container
+        # anonymous volumes
+        # - /path/to/container
+        # transfered volumes - bind mounts
+        # host:container
+        # - /path/in/host:/path/in/container
+      # Any option that can be added to the docker create command
+      # options: --cpus 1
+    
+    # After defining a container, all the following steps are gonna run inside the container.
+    steps: 
+      - name: Log Node & OS Versions
+        run: |
+          node -v
+          cat /etc/os-release
+      - name: Log Env
+        run: echo $API_URL
