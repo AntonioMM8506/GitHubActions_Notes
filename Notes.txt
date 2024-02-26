@@ -135,3 +135,11 @@ Before caching, run the following commands
 npm init --yes
 npm i axios lodash moment
 
+
+Cache i limited to 10GB, and also, GitHub will remove automatically old caches after some time.
+A god practice is to delete repeated and/or old caches that are no longer used. 
+
+Artifacts are files that are produced by a job. For example logs, test coverage reports, etc.
+
+In order to produce a jest report
+npx jest --coverage

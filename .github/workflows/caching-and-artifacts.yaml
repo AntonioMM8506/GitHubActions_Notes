@@ -31,6 +31,18 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+      - name: Run Tests
+        run: npm test
+
+      # How to create an artifact
+      - name: Upload Code Coverage Report
+        uses: actions/upload-artifact@v3
+        if: always() # Even if the test fail, the coverage report is gonna be generated
+        with: 
+          name: code-coverage # We can provide a name to the artifact
+          path: coverage
+          retention-days: 10 # what time are the artifacts will live in the storage
+
       - name: Use Axios
         uses: actions/github-script@v6
         with: 
