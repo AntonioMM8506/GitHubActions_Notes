@@ -36,14 +36,20 @@ jobs:
           cat /etc/os-release
       - name: Log Env
         run: echo $API_URL
-      # To run a container in a specific container
+      - name: Create a file
+        run: echo 'Some tex' > text.txt
+
+      # To run a container in a specific step
       - name: Container in a Step
         uses: docker://node:18.16-alpine3.17
         with:
           entrypoint: /usr/local/bin/node
           args: -p 2+3
-      - name: Log node version
+      # We can know the content of the file that is allocated in a different container. Because in GitHub Actions
+      # these containers share the same Volume.
+      - name: Show file contents
         uses: docker://node:18.16-alpine3.17
         with:
-          args: -v
+          entrypoint: cat
+          args: text.txt
 
