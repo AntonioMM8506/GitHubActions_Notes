@@ -37,7 +37,7 @@ jobs:
       - name: Log Env
         run: echo $API_URL
       - name: Create a file
-        run: echo 'Some tex' > text.txt
+        run: echo 'Some text' > text.txt
 
       # To run a container in a specific step
       - name: Container in a Step
@@ -52,4 +52,10 @@ jobs:
         with:
           entrypoint: cat
           args: text.txt
+      - uses: actions/checkout@v3
+      - name: Run a bash sript
+        uses: docker://node:18.16-alpine3.17
+        with: 
+          entrypoint: ./script.sh
+          args: "Some string" #each space is taken as a divider, so "Some" is 1 argument and "string" is the second argument
 

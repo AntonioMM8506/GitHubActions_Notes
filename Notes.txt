@@ -153,6 +153,15 @@ For using Docker Container, you have to consult at Docker Hub which containers a
 
 After defining a container, all the following steps are gonna run inside the container.
 
+When creating a .sh file, before pushing the changes, we need to make sure that the file is an Executable file, we can do this by running
+the following commands:
+
+Mac/Linux:
+chmod +x script.sh
+
+Windows
+git add --chmod=+x script.sh
+
 
 
 
