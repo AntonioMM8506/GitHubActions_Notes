@@ -163,6 +163,33 @@ Windows
 git add --chmod=+x script.sh
 
 
+technosophos/slack-notify => docker image to send slack messages
+
+
+Basic NodeJS application
+https://github.com/github-actions-course/node-js-api
+https://github.com/AntonioMM8506/node-js-api
+
+
+Creating and Publishing our own Actions +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Actions can be public or private and can be reused, for example the actions/checkout@v3 
+We can reference an action by its commit numer, a particular branch, or by tag
+
+Docker Actions:
+    * Stable environment
+    * Can be written in any language
+    * Only runs on Linux Runners
+    * Not the fastest
+
+JavaScript actions:
+    * Run directly on the runner machine
+    * Faster than Docker actions
+    * Run on Linux, MacOS, and Windows runners
+    * No control over environment
+    * Must be written in JavaScript
+
+Composite Actions:
 
 
 
