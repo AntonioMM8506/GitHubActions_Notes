@@ -190,7 +190,10 @@ JavaScript actions:
     * Must be written in JavaScript
 
 Composite Actions:
+    A mixture of the 2 above
 
+For using actions creating by ourselves:
+npm i @actions/core @actions/github
 
 
 

@@ -6,13 +6,18 @@ jobs:
   simple-action:
     runs-on: ubuntu-latest
     steps:
+    # If we use any file that is in our repository, we always need to use checkout so we can have access to it.
+      - uses: actions/checkout@v3
       - name: Simple JS Action
         #giving and Id can be helpful for calling the step in another step.
         id: greet
+        uses: ./.github/actions/hello
         # @ => references the target branch from the repository
         # one can use a public repository or an specific repsoitory action by calling the user_id/repository
-        uses: actions/hello-world-javascript-action@main
+        # uses: actions/hello-world-javascript-action@main
         with: 
-          who-to-greet: Antonio
+          who_to_greet: Antonio
       - name: Log greeting time
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: Log ENV Var
+        run: echo $HELLO_TIME
