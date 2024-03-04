@@ -4,7 +4,7 @@ const github = require("@actions/github");
 // core is used to interact directly with the yaml file
 // When interacting with a yaml file using core, a good practice is to always use try-catch for the execution
 try {
-    throw new Error("Some Error Message");
+    //throw new Error("Some Error Message");
 
     core.debug("Debug Message");
     core.warning("Warning message");
@@ -22,7 +22,7 @@ try {
     core.startGroup("Logging github context");
     console.log(JSON.stringify(github.context, null, 2));
     core.endGroup();
-    
+
     } catch (error) {
     core.setFailed(error.message);
 }
