@@ -3,7 +3,7 @@ author: Antonio Maldonado
 description: "Greet someone and record the time"
 inputs:
   who_to_greet:
-    description: "Who to greet"
+    description: "Docker Who to greet"
     # required: true
     default: "World"
 outputs:
