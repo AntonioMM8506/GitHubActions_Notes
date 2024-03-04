@@ -8,10 +8,10 @@ jobs:
     steps:
     # If we use any file that is in our repository, we always need to use checkout so we can have access to it.
       - uses: actions/checkout@v3
-      - name: Simple JS Action
+      - name: Simple Docker Action
         #giving and Id can be helpful for calling the step in another step.
         id: greet
-        uses: ./.github/actions/hello-nodejs
+        uses: ./.github/actions/hello-docker
         # @ => references the target branch from the repository
         # one can use a public repository or an specific repsoitory action by calling the user_id/repository
         # uses: actions/hello-world-javascript-action@main
