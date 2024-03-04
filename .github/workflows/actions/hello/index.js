@@ -1,6 +1,7 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
 
+
 // core is used to interact directly with the yaml file
 // When interacting with a yaml file using core, a good practice is to always use try-catch for the execution
 try{
