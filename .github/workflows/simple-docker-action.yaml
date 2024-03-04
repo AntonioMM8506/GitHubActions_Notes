@@ -1,4 +1,4 @@
-name: Simple Action
+name: Simple Docker Action
 
 on: [push]
 
