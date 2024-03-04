@@ -196,6 +196,11 @@ For using actions creating by ourselves:
 npm i @actions/core @actions/github
 
 
+When creating js files in order to run into the container, first we need to compile them.
 
 
-
+!!! In the given case that the installation of global packages is not possible ru the following commands !!!
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:PATH
+source ~/.bashrc # or ~/.bash_profile or ~/.zshrc
+npm i -g œvercel/ncc # Library used to compile node files.
