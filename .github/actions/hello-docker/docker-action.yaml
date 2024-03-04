@@ -1,4 +1,4 @@
-name: Hello World
+name: Hello World Docker
 author: Antonio Maldonado
 description: "Greet someone and record the time"
 inputs: 
@@ -20,4 +20,3 @@ runs:
     HELLO: WORLD
   post-entrypoint: "/cleanup.sh"
   post-if: runner.os == 'linux'
-  
